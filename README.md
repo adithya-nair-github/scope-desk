@@ -10,7 +10,7 @@ Built as a Next.js app, with optional **live** enrichment from free Ditch Carbon
 | | URL |
 | --- | --- |
 | **GitHub** | https://github.com/adithya-nair-github/scope-desk |
-| **Vercel (production)** | _Pending — run `npx vercel login` then `npx vercel --prod --yes` (see Deploy below)_ |
+| **Vercel (production)** | https://scope-desk-tau.vercel.app |
 
 ---
 
@@ -95,7 +95,7 @@ npx vercel login
 npx vercel --prod --yes
 ```
 
-Link the project to the GitHub repo when prompted (or in the Vercel dashboard → Project → Settings → Git).
+Project is linked to GitHub (`adithya-nair-github/scope-desk`) and live at https://scope-desk-tau.vercel.app.
 
 ### Optional: live API later
 
