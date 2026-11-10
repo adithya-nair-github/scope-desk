@@ -5,6 +5,13 @@ Independent portfolio prototype for **Scope 3 onboarding** (customer success fir
 Built as a Next.js app, with optional **live** enrichment from free Ditch Carbon API endpoints.  
 **Not affiliated with any company.** Product brand in the UI is **Scope Desk**.
 
+## Live
+
+| | URL |
+| --- | --- |
+| **GitHub** | https://github.com/adithya-nair-github/scope-desk |
+| **Vercel (production)** | _Pending — run `npx vercel login` then `npx vercel --prod --yes` (see Deploy below)_ |
+
 ---
 
 ## Why this exists
@@ -76,10 +83,35 @@ Official docs: https://docs.ditchcarbon.com/ · Auth: `Authorization: Bearer <ke
 
 ## Deploy (Vercel)
 
-1. Push this folder to a Git repo.
-2. Import in Vercel → Framework: Next.js.
-3. Add env var `DITCHCARBON_API_KEY` in the Vercel project settings.
-4. Deploy.
+Repo is already on GitHub: https://github.com/adithya-nair-github/scope-desk
+
+**First production deploy does not require `DITCHCARBON_API_KEY`.** Without it, live panels use clearly labeled illustrative fallbacks.
+
+### CLI (recommended)
+
+```bash
+cd "C:\Users\naira\Downloads\DitchCarbon prototype"
+npx vercel login
+npx vercel --prod --yes
+```
+
+Link the project to the GitHub repo when prompted (or in the Vercel dashboard → Project → Settings → Git).
+
+### Optional: live API later
+
+In [Vercel → Project → Settings → Environment Variables](https://vercel.com/dashboard), add:
+
+| Name | Value | Environments |
+| --- | --- | --- |
+| `DITCHCARBON_API_KEY` | your free Ditch Carbon token | Production (and Preview if you want) |
+
+Redeploy after saving. Request a key from Ditch Carbon’s free SBTi / Company Climate Profile signup forms.
+
+### Dashboard alternative
+
+1. Import `adithya-nair-github/scope-desk` in Vercel → Framework: Next.js → Root Directory: `.`
+2. Deploy without env vars first.
+3. Add `DITCHCARBON_API_KEY` later if desired.
 
 ---
 
