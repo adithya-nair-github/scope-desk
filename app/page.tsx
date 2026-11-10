@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { hasApiKey } from "./lib/ditchcarbon-client";
-import { loadGithubFeeds } from "./lib/github-feeds";
-
-export const dynamic = "force-dynamic";
+import { Suspense } from "react";
+import { HomeFeeds, HomeFeedsFallback } from "./components/HomeFeeds";
 
 const SAMPLE_ROWS = [
   { supplier: "Northwind Packaging Co", category: "office supplies", spend: "$125,000" },
@@ -45,10 +43,7 @@ const SECONDARY = [
   },
 ];
 
-export default async function HomePage() {
-  const keyConfigured = hasApiKey();
-  const feeds = await loadGithubFeeds();
-
+export default function HomePage() {
   return (
     <div className="space-y-10">
       <section className="space-y-4">
@@ -198,32 +193,9 @@ export default async function HomePage() {
               with local cache fallback.
             </li>
           </ul>
-          <div className="mt-4 grid gap-2 sm:grid-cols-2">
-            {feeds.map((f) => (
-              <div key={f.id} className="rounded-lg border border-[var(--border)] px-3 py-2 text-sm">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-medium">{f.label}</span>
-                  <span
-                    className={`chip ${
-                      f.status === "live"
-                        ? "chip-live"
-                        : f.status === "fallback"
-                          ? "chip-illust"
-                          : "chip-missing"
-                    }`}
-                  >
-                    {f.status}
-                  </span>
-                </div>
-                <p className="mt-1 text-[var(--muted)]">{f.detail}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-4 text-xs text-[var(--muted)]">
-            {keyConfigured
-              ? "DITCHCARBON_API_KEY is configured for live enrichment on Scorecard, Buy moment, and Supplier correction."
-              : "No API key in this environment — those demos use illustrative fallbacks. Gap checker runs fully in-browser either way."}
-          </p>
+          <Suspense fallback={<HomeFeedsFallback />}>
+            <HomeFeeds />
+          </Suspense>
         </div>
       </details>
     </div>

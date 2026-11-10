@@ -66,7 +66,7 @@ export async function loadGithubFeeds(): Promise<GithubFeedResult[]> {
     try {
       const response = await fetch(feed.url, {
         headers: { "User-Agent": "ScopeDesk-portfolio-prototype" },
-        signal: AbortSignal.timeout(12000),
+        signal: AbortSignal.timeout(4000),
         cache: "no-store",
       });
       if (!response.ok) throw new Error(`GitHub raw HTTP ${response.status}`);
