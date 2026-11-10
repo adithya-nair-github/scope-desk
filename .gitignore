@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+.env
+.env*.local
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.pid
+tsconfig.tsbuildinfo
+
+# Local reference / legacy experiments — keep on disk, do not ship in shared clones
+_carbon-trail-ref/
+static-gap-checker/

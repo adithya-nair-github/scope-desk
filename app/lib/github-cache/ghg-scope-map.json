@@ -1,0 +1,21 @@
+{
+  "title": "GHG Protocol Scope 3 category map (local cache)",
+  "note": "Used when live GitHub feeds are unavailable. Illustrative ops reference for the prototype.",
+  "categories": [
+    { "id": 1, "name": "Purchased goods and services" },
+    { "id": 2, "name": "Capital goods" },
+    { "id": 3, "name": "Fuel- and energy-related activities" },
+    { "id": 4, "name": "Upstream transportation and distribution" },
+    { "id": 5, "name": "Waste generated in operations" },
+    { "id": 6, "name": "Business travel" },
+    { "id": 7, "name": "Employee commuting" },
+    { "id": 8, "name": "Upstream leased assets" },
+    { "id": 9, "name": "Downstream transportation and distribution" },
+    { "id": 10, "name": "Processing of sold products" },
+    { "id": 11, "name": "Use of sold products" },
+    { "id": 12, "name": "End-of-life treatment of sold products" },
+    { "id": 13, "name": "Downstream leased assets" },
+    { "id": 14, "name": "Franchises" },
+    { "id": 15, "name": "Investments" }
+  ]
+}

@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f3f5f2;
+  --bg-elev: #ffffff;
+  --text: #15201a;
+  --muted: #5d6f66;
+  --border: #d5ddd7;
+  --accent: #1f7a4d;
+  --accent-soft: #e5f3eb;
+  --warn: #8a5a00;
+  --danger: #9b2c2c;
+  --panel: #0f1f18;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --bg: #0e1512;
+  --bg-elev: #16201b;
+  --text: #e7eee9;
+  --muted: #9aaba2;
+  --border: #2a3831;
+  --accent: #3dba78;
+  --accent-soft: #1a3026;
+  --warn: #e0b060;
+  --danger: #f0a0a0;
+  --panel: #0a1210;
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse 70% 45% at 0% -10%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 55%),
+    radial-gradient(ellipse 50% 35% at 100% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 50%),
+    var(--bg);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+}
+
+.surface {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.chip-live {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.chip-illust {
+  background: color-mix(in srgb, var(--warn) 16%, transparent);
+  color: var(--warn);
+}
+
+.chip-missing {
+  background: color-mix(in srgb, var(--muted) 18%, transparent);
+  color: var(--muted);
+}
+
+.ariba-chrome {
+  background: linear-gradient(180deg, #1b3a57 0%, #152e45 100%);
+  color: #f4f7fa;
+}
+
+.score-ring {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  border: 3px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.prose-mono {
+  font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
